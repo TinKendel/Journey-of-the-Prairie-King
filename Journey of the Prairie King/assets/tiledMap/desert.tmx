@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="20" height="81" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="60">
+ <tileset firstgid="1" name="background" tilewidth="16" tileheight="16" tilecount="33" columns="11">
+  <image source="../../../../../Journey of the Prairie King/Journey of the Prairie King/Journey of a King/assets/tiledPNG/background.png" width="176" height="48"/>
+ </tileset>
+ <layer id="1" name="BottomLayer" width="20" height="81">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,28,28,28,28,28,28,28,23,23,28,28,28,28,28,28,28,0,0,
+0,0,28,25,25,25,25,25,25,25,25,25,25,25,25,25,25,28,0,0,
+0,0,28,25,26,26,26,26,26,26,26,26,26,26,26,26,25,28,0,0,
+0,0,28,25,26,27,26,26,26,26,26,26,26,26,26,26,25,28,0,0,
+0,0,28,25,26,26,26,26,26,26,26,26,26,26,27,26,25,28,0,0,
+0,0,28,25,26,26,26,27,26,26,26,26,26,26,26,26,25,28,0,0,
+0,0,28,25,26,26,26,26,26,26,26,26,26,26,26,26,25,28,0,0,
+0,0,24,25,26,26,26,26,26,26,26,27,26,26,26,26,25,23,0,0,
+0,0,23,25,26,26,26,26,26,26,26,26,26,26,26,26,25,24,0,0,
+0,0,28,25,26,26,26,26,26,26,26,26,26,26,26,26,25,28,0,0,
+0,0,28,25,26,26,26,26,26,27,26,26,26,26,26,26,25,28,0,0,
+0,0,28,25,26,26,26,26,26,26,26,26,26,26,26,26,25,28,0,0,
+0,0,28,25,26,26,26,26,26,26,26,26,26,26,27,26,25,28,0,0,
+0,0,28,25,26,26,26,26,26,26,26,26,26,26,26,26,25,28,0,0,
+0,0,28,25,25,25,25,25,25,25,25,25,25,25,25,25,25,28,0,0,
+0,0,28,28,28,28,28,28,28,23,23,28,28,28,28,28,28,28,0,0,
+0,0,28,28,28,28,28,28,28,23,24,28,28,28,28,28,28,28,0,0,
+0,0,28,25,25,25,25,25,25,25,25,25,25,25,25,25,25,28,0,0,
+0,0,28,25,26,26,26,26,26,26,26,26,26,26,26,26,25,28,0,0,
+0,0,28,25,26,26,26,26,26,26,26,26,26,26,27,26,25,28,0,0,
+0,0,28,25,27,26,30,30,26,26,26,26,30,30,26,26,25,28,0,0,
+0,0,28,25,26,26,30,26,26,26,26,26,26,30,26,26,25,28,0,0,
+0,0,28,25,26,26,26,26,26,27,26,26,26,26,26,26,25,28,0,0,
+0,0,24,25,26,26,26,26,26,26,26,26,26,26,27,26,25,23,0,0,
+0,0,23,25,26,26,26,27,26,26,26,26,26,26,26,26,25,23,0,0,
+0,0,28,25,26,26,26,26,26,26,26,26,26,26,26,26,25,28,0,0,
+0,0,28,25,26,26,30,26,26,26,26,26,26,30,26,26,25,28,0,0,
+0,0,28,25,26,26,30,30,26,26,26,26,30,30,26,26,25,28,0,0,
+0,0,28,25,26,26,26,26,27,26,26,26,26,26,27,26,25,28,0,0,
+0,0,28,25,26,26,26,26,26,26,26,26,26,26,26,26,25,28,0,0,
+0,0,28,25,25,25,25,25,25,25,25,25,25,25,25,25,25,28,0,0,
+0,0,28,28,28,28,28,28,28,23,23,28,28,28,28,28,28,28,0,0,
+0,0,28,28,28,28,28,28,28,23,24,28,28,28,28,28,28,28,0,0,
+0,0,28,28,28,25,25,25,25,25,25,25,25,25,25,28,28,28,0,0,
+0,0,28,28,26,26,26,26,26,26,26,26,26,26,26,26,28,28,0,0,
+0,0,28,25,26,26,26,26,26,26,26,26,26,26,26,26,25,28,0,0,
+0,0,28,25,26,26,26,27,26,30,30,26,26,26,27,26,25,28,0,0,
+0,0,28,25,26,26,26,26,26,26,26,26,26,26,26,26,25,28,0,0,
+0,0,28,25,26,26,26,26,27,26,26,26,26,26,26,26,25,28,0,0,
+0,0,23,25,26,26,30,26,26,26,26,26,26,30,26,26,25,24,0,0,
+0,0,23,25,26,26,30,26,26,26,27,26,26,30,26,26,25,23,0,0,
+0,0,28,25,26,26,26,26,26,26,26,26,26,26,26,26,25,28,0,0,
+0,0,28,25,26,27,26,26,26,26,26,26,26,26,26,26,25,28,0,0,
+0,0,28,25,26,26,26,26,26,30,30,27,26,26,26,27,25,28,0,0,
+0,0,28,25,26,27,26,26,26,26,26,26,26,26,26,26,25,28,0,0,
+0,0,28,28,26,26,26,26,26,26,26,26,26,26,26,26,28,28,0,0,
+0,0,28,28,28,25,25,25,25,25,25,25,25,25,25,28,28,28,0,0,
+0,0,28,28,28,28,28,28,28,24,23,28,28,28,28,28,28,28,0,0,
+0,0,28,28,28,28,28,28,28,23,24,28,28,28,28,28,28,28,0,0,
+0,0,28,25,25,25,25,25,25,25,25,25,25,25,25,25,25,28,0,0,
+0,0,28,25,26,26,26,26,26,26,26,26,26,26,26,26,25,28,0,0,
+0,0,28,25,26,26,26,27,26,26,26,26,26,26,27,26,25,28,0,0,
+0,0,28,25,26,26,30,30,30,26,26,30,30,30,26,26,25,28,0,0,
+0,0,28,25,27,26,30,26,26,26,26,26,26,30,26,26,25,28,0,0,
+0,0,28,25,26,26,30,26,26,26,26,26,26,30,27,26,25,28,0,0,
+0,0,24,25,26,26,26,26,27,26,27,26,26,26,26,26,25,23,0,0,
+0,0,24,25,26,27,26,26,26,26,26,26,26,26,26,26,25,23,0,0,
+0,0,28,25,26,26,30,26,26,26,27,26,26,30,26,26,25,28,0,0,
+0,0,28,25,26,26,30,26,26,26,26,26,26,30,26,26,25,28,0,0,
+0,0,28,25,27,26,30,30,30,26,26,30,30,30,26,26,25,28,0,0,
+0,0,28,25,26,26,26,26,26,26,26,26,26,26,27,26,25,28,0,0,
+0,0,28,25,26,26,26,26,26,26,26,26,27,26,26,26,25,28,0,0,
+0,0,28,25,25,25,25,25,25,25,25,25,25,25,25,25,25,28,0,0,
+0,0,28,28,28,28,28,28,28,24,24,28,28,28,28,28,28,28,0,0,
+0,0,23,23,23,23,23,23,23,23,24,23,24,23,23,24,24,23,0,0,
+0,0,24,25,25,25,25,25,25,25,25,25,25,25,25,25,25,23,0,0,
+0,0,23,25,26,26,26,26,26,26,26,26,27,26,26,26,25,24,0,0,
+0,0,23,25,26,26,27,26,26,26,26,26,26,26,26,26,25,23,0,0,
+0,0,23,25,26,26,26,26,26,30,30,26,26,26,27,26,25,23,0,0,
+0,0,24,25,26,27,26,26,26,26,26,26,26,26,26,26,25,23,0,0,
+0,0,23,25,26,26,26,28,26,26,26,26,28,26,26,26,25,24,0,0,
+0,0,24,25,26,26,26,26,26,26,27,26,26,26,26,26,25,23,0,0,
+0,0,31,32,31,32,31,32,31,32,31,32,31,32,31,32,31,32,0,0,
+0,0,23,25,26,26,26,26,26,26,26,26,26,26,26,26,25,24,0,0,
+0,0,24,25,26,26,27,26,26,26,26,26,26,26,27,26,25,23,0,0,
+0,0,23,25,26,26,26,26,26,26,26,26,26,26,26,26,25,23,0,0,
+0,0,24,25,26,26,26,26,26,30,30,27,26,26,26,26,25,23,0,0,
+0,0,23,25,26,26,26,26,26,26,26,26,26,26,26,27,25,23,0,0,
+0,0,23,25,25,25,25,25,25,25,25,25,25,25,25,25,25,23,0,0,
+0,0,23,23,23,24,23,23,24,23,23,23,23,23,24,23,23,23,0,0
+</data>
+ </layer>
+ <layer id="2" name="TopLayer" width="20" height="81">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,29,29,29,29,29,29,29,0,0,29,29,29,29,29,29,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,29,29,29,29,29,29,0,0,29,29,29,29,29,29,29,0,0,
+0,0,29,29,29,29,29,29,29,0,0,29,29,29,29,29,29,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,29,29,29,29,29,29,0,0,29,29,29,29,29,29,29,0,0,
+0,0,29,29,29,29,29,29,29,0,0,29,29,29,29,29,29,29,0,0,
+0,0,29,29,29,0,0,0,0,0,0,0,0,0,0,29,29,29,0,0,
+0,0,29,29,0,0,0,0,0,0,0,0,0,0,0,0,29,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,29,0,0,0,0,0,0,0,0,0,0,0,0,29,29,0,0,
+0,0,29,29,29,0,0,0,0,0,0,0,0,0,0,29,29,29,0,0,
+0,0,29,29,29,29,29,29,29,0,0,29,29,29,29,29,29,29,0,0,
+0,0,29,29,29,29,29,29,29,0,0,29,29,29,29,29,29,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,
+0,0,29,29,29,29,29,29,29,0,0,29,29,29,29,29,29,29,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,29,0,0,0,0,29,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="3" name="Obstacle">
+  <object id="1" x="32" y="16" width="256" height="16"/>
+  <object id="2" name="Wall" x="32" y="16" width="256" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="3" name="Wall" x="32" y="16" width="16" height="256">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="4" name="Wall" x="32" y="256" width="256" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="5" name="Wall" x="272" y="16" width="16" height="256">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="7" name="Wall" x="32" y="272" width="256" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="8" name="Wall" x="32" y="272" width="16" height="256">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="9" name="Wall" x="32" y="512" width="256" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="10" name="Wall" x="272" y="272" width="16" height="256">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="11" name="Wall" x="32" y="784" width="256" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="12" name="Wall" x="32" y="784" width="16" height="256">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="13" name="Wall" x="32" y="1024" width="256" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="14" name="Wall" x="272" y="784" width="16" height="256">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="19" name="Wall" x="32" y="1040" width="256" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="20" name="Wall" x="32" y="1040" width="16" height="256">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="21" name="Wall" x="32" y="1280" width="256" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="22" name="Wall" x="272" y="1040" width="16" height="256">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="23" name="Wall" x="112" y="1136" width="16" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="24" name="Wall" x="192" y="1136" width="16" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="25" name="Wall" x="144" y="1104" width="32" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="26" name="Wall" x="144" y="1232" width="32" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="27" name="Wall" x="32" y="1168" width="256" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="28" name="Wall" x="96" y="848" width="16" height="48">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="29" name="Wall" x="112" y="848" width="32" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="30" name="Wall" x="176" y="848" width="48" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="31" name="Wall" x="208" y="864" width="16" height="32">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="32" name="Wall" x="96" y="928" width="16" height="48">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="33" name="Wall" x="112" y="960" width="32" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="34" name="Wall" x="176" y="960" width="48" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="35" name="Wall" x="208" y="928" width="16" height="32">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="36" name="Wall" x="32" y="528" width="256" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="37" name="Wall" x="32" y="528" width="16" height="256">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="38" name="Wall" x="32" y="768" width="256" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="39" name="Wall" x="272" y="528" width="16" height="256">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="40" name="Wall" x="48" y="544" width="16" height="32">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="41" name="Wall" x="64" y="544" width="16" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="42" name="Wall" x="240" y="544" width="16" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="43" name="Wall" x="256" y="544" width="16" height="32">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="44" name="Wall" x="144" y="592" width="32" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="45" name="Wall" x="96" y="640" width="16" height="32">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="46" name="Wall" x="144" y="704" width="32" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="47" name="Wall" x="208" y="640" width="16" height="32">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="48" name="Wall" x="240" y="752" width="32" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="49" name="Wall" x="256" y="736" width="16" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="50" name="Wall" x="48" y="736" width="16" height="32">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="51" name="Wall" x="64" y="752" width="16" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="52" name="Wall" x="96" y="336" width="16" height="32">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="53" name="Wall" x="192" y="336" width="32" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="54" name="Wall" x="112" y="336" width="16" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="55" name="Wall" x="208" y="352" width="16" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="56" name="Wall" x="96" y="432" width="16" height="32">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="57" name="Wall" x="112" y="448" width="16" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="58" name="Wall" x="192" y="448" width="32" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+  <object id="59" name="Wall" x="208" y="432" width="16" height="16">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+    <property name="type" value="wall"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

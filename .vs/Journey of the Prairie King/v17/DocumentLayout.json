@@ -1,0 +1,92 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\VS_projekti\\JotPK\\Journey of the Prairie King\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{56BC0747-04D3-4B17-BBA6-A465FBC9BBE7}|Journey of the Prairie King\\Journey of the Prairie King.vcxproj|E:\\VS_projekti\\JotPK\\Journey of the Prairie King\\Journey of the Prairie King\\MapLoader.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{56BC0747-04D3-4B17-BBA6-A465FBC9BBE7}|Journey of the Prairie King\\Journey of the Prairie King.vcxproj|solutionrelative:Journey of the Prairie King\\MapLoader.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56BC0747-04D3-4B17-BBA6-A465FBC9BBE7}|Journey of the Prairie King\\Journey of the Prairie King.vcxproj|E:\\VS_projekti\\JotPK\\Journey of the Prairie King\\Journey of the Prairie King\\MapLoader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{56BC0747-04D3-4B17-BBA6-A465FBC9BBE7}|Journey of the Prairie King\\Journey of the Prairie King.vcxproj|solutionrelative:Journey of the Prairie King\\MapLoader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56BC0747-04D3-4B17-BBA6-A465FBC9BBE7}|Journey of the Prairie King\\Journey of the Prairie King.vcxproj|E:\\VS_projekti\\JotPK\\Journey of the Prairie King\\Journey of the Prairie King\\Constants.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{56BC0747-04D3-4B17-BBA6-A465FBC9BBE7}|Journey of the Prairie King\\Journey of the Prairie King.vcxproj|solutionrelative:Journey of the Prairie King\\Constants.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56BC0747-04D3-4B17-BBA6-A465FBC9BBE7}|Journey of the Prairie King\\Journey of the Prairie King.vcxproj|E:\\VS_projekti\\JotPK\\Journey of the Prairie King\\Journey of the Prairie King\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{56BC0747-04D3-4B17-BBA6-A465FBC9BBE7}|Journey of the Prairie King\\Journey of the Prairie King.vcxproj|solutionrelative:Journey of the Prairie King\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 190,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Constants.hpp",
+              "DocumentMoniker": "E:\\VS_projekti\\JotPK\\Journey of the Prairie King\\Journey of the Prairie King\\Constants.hpp",
+              "RelativeDocumentMoniker": "Journey of the Prairie King\\Constants.hpp",
+              "ToolTip": "E:\\VS_projekti\\JotPK\\Journey of the Prairie King\\Journey of the Prairie King\\Constants.hpp",
+              "RelativeToolTip": "Journey of the Prairie King\\Constants.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-21T10:08:50.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MapLoader.hpp",
+              "DocumentMoniker": "E:\\VS_projekti\\JotPK\\Journey of the Prairie King\\Journey of the Prairie King\\MapLoader.hpp",
+              "RelativeDocumentMoniker": "Journey of the Prairie King\\MapLoader.hpp",
+              "ToolTip": "E:\\VS_projekti\\JotPK\\Journey of the Prairie King\\Journey of the Prairie King\\MapLoader.hpp",
+              "RelativeToolTip": "Journey of the Prairie King\\MapLoader.hpp",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-16T13:42:04.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MapLoader.cpp",
+              "DocumentMoniker": "E:\\VS_projekti\\JotPK\\Journey of the Prairie King\\Journey of the Prairie King\\MapLoader.cpp",
+              "RelativeDocumentMoniker": "Journey of the Prairie King\\MapLoader.cpp",
+              "ToolTip": "E:\\VS_projekti\\JotPK\\Journey of the Prairie King\\Journey of the Prairie King\\MapLoader.cpp",
+              "RelativeToolTip": "Journey of the Prairie King\\MapLoader.cpp",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAAACIAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-16T13:42:12.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "main.cpp",
+              "DocumentMoniker": "E:\\VS_projekti\\JotPK\\Journey of the Prairie King\\Journey of the Prairie King\\main.cpp",
+              "RelativeDocumentMoniker": "Journey of the Prairie King\\main.cpp",
+              "ToolTip": "E:\\VS_projekti\\JotPK\\Journey of the Prairie King\\Journey of the Prairie King\\main.cpp",
+              "RelativeToolTip": "Journey of the Prairie King\\main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-16T10:41:41.524Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+﻿  MapLoader.cpp
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(85,55): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(85,55): warning C4244:         with
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(85,55): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(85,55): warning C4244:             T=float
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(85,55): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(85,39): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(85,39): warning C4244:         with
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(85,39): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(85,39): warning C4244:             T=float
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(85,39): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(86,61): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(86,61): warning C4244:         with
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(86,61): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(86,61): warning C4244:             T=float
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(86,61): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(86,45): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(86,45): warning C4244:         with
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(86,45): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(86,45): warning C4244:             T=float
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(86,45): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(87,67): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(87,67): warning C4244:         with
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(87,67): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(87,67): warning C4244:             T=float
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(87,67): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(87,45): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(87,45): warning C4244:         with
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(87,45): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(87,45): warning C4244:             T=float
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(87,45): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(88,61): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(88,61): warning C4244:         with
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(88,61): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(88,61): warning C4244:             T=float
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(88,61): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(88,39): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(88,39): warning C4244:         with
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(88,39): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(88,39): warning C4244:             T=float
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(88,39): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(91,58): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(91,58): warning C4244:         with
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(91,58): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(91,58): warning C4244:             T=unsigned int
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(91,58): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(91,58): warning C4244:         and
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(91,58): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(91,58): warning C4244:             T=float
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(91,58): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(91,41): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(91,41): warning C4244:         with
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(91,41): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(91,41): warning C4244:             T=unsigned int
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(91,41): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(91,41): warning C4244:         and
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(91,41): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(91,41): warning C4244:             T=float
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(91,41): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(92,64): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(92,64): warning C4244:         with
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(92,64): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(92,64): warning C4244:             T=unsigned int
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(92,64): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(92,64): warning C4244:         and
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(92,64): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(92,64): warning C4244:             T=float
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(92,64): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(92,47): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(92,47): warning C4244:         with
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(92,47): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(92,47): warning C4244:             T=unsigned int
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(92,47): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(92,47): warning C4244:         and
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(92,47): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(92,47): warning C4244:             T=float
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(92,47): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(93,70): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(93,70): warning C4244:         with
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(93,70): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(93,70): warning C4244:             T=unsigned int
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(93,70): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(93,70): warning C4244:         and
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(93,70): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(93,70): warning C4244:             T=float
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(93,70): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(93,47): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(93,47): warning C4244:         with
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(93,47): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(93,47): warning C4244:             T=unsigned int
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(93,47): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(93,47): warning C4244:         and
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(93,47): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(93,47): warning C4244:             T=float
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(93,47): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(94,64): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(94,64): warning C4244:         with
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(94,64): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(94,64): warning C4244:             T=unsigned int
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(94,64): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(94,64): warning C4244:         and
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(94,64): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(94,64): warning C4244:             T=float
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(94,64): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(94,41): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(94,41): warning C4244:         with
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(94,41): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(94,41): warning C4244:             T=unsigned int
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(94,41): warning C4244:         ]
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(94,41): warning C4244:         and
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(94,41): warning C4244:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(94,41): warning C4244:             T=float
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\MapLoader.cpp(94,41): warning C4244:         ]
+  Journey of the Prairie King.vcxproj -> E:\VS_projekti\JotPK\Journey of the Prairie King\x64\Debug\Journey of the Prairie King.exe
