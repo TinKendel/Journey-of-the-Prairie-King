@@ -26,13 +26,14 @@ public:
         sf::FloatRect rect;       ///< Rectangle representing the collision area
         std::string type;         ///< Type of the object (e.g., "wall", "entrance")
         bool nextArea = false;    ///< Custom property for entrance objects, determines area transitions
+        bool hasCollision = false;
     };
 
 private:
     sf::Texture m_tileset;                      ///< Tileset texture for the map
     std::vector<sf::VertexArray> m_layers;      ///< Vertex arrays for rendering map layers
     std::vector<bool> m_layerVisibility;        ///< Visibility toggles for layers (e.g., for animations)
-    sf::Clock wallClock;                        ///< Timer for wall animations
+    sf::Clock wall_clock;                        ///< Timer for wall animations
 
     std::vector<CollisionObject> m_collisionObjects;   ///< Collision objects parsed from the map
     std::vector<sf::RectangleShape> m_collisionShapes; ///< Shapes for debugging/rendering collision areas
@@ -85,7 +86,7 @@ public:
      * @param playerBounds The bounding box of the player.
      * @return True if a collision is detected, false otherwise.
      */
-    bool checkCollision(const sf::FloatRect& playerBounds) const;
+    bool checkCollision(const sf::Sprite& playerBounds) const;
 
     /**
      * @brief Provides access to all collision objects.

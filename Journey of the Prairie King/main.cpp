@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "Constants.hpp"
 #include "MapLoader.hpp"
+#include "Player.hpp"
 
 int main() 
 {
@@ -25,6 +26,10 @@ int main()
     // Scale the map by a factor of 2x for rendering
     map.setScale(GameConfig::MAP_SCALE, GameConfig::MAP_SCALE);
 
+    Player player;
+    player.loadPlayerTexture("assets\\tiledPNG\\kingSprite.png");
+    player.setPlayerSprites();
+
     // Main game loop
     while (window.isOpen()) 
     {
@@ -42,9 +47,16 @@ int main()
         // Update the map (e.g., animate walls or other elements)
         map.wallAnimation();
 
+        // Update player
+        player.handleInputs();
+        player.playerMovement(map);
+
+        
         // Render the scene
         window.clear();        // Clear the window to prepare for a new frame
         window.draw(map);      // Draw the map (includes collision overlays if enabled)
+        window.draw(player.getLegs());
+        window.draw(player.getPlayer());
         window.display();      // Display the rendered frame
     }
 
