@@ -7,6 +7,7 @@ void Player::loadPlayerTexture(const std::string& filePath)
 		std::cerr << "Failed to load player texture!" << std::endl;
 	}
 }
+
 void Player::setPlayerSprites()
 {
 	player_sprite.setTexture(player_texture);

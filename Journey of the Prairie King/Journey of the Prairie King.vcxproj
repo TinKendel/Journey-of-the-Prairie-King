@@ -133,6 +133,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Resursi\tinyXML2\tinyxml2-master\tinyxml2.cpp" />
+    <ClCompile Include="HUD.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MapLoader.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -140,6 +141,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\Resursi\tinyXML2\tinyxml2-master\tinyxml2.h" />
     <ClInclude Include="Constants.hpp" />
+    <ClInclude Include="HUD.hpp" />
     <ClInclude Include="MapLoader.hpp" />
     <ClInclude Include="Player.hpp" />
   </ItemGroup>

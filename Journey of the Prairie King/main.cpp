@@ -2,6 +2,7 @@
 #include "Constants.hpp"
 #include "MapLoader.hpp"
 #include "Player.hpp"
+#include "HUD.hpp"
 
 int main() 
 {
@@ -30,6 +31,10 @@ int main()
     player.loadPlayerTexture("assets\\tiledPNG\\kingSprite.png");
     player.setPlayerSprites();
 
+    HUD hud;
+    hud.loadHUDTextures();
+    hud.loadFont();
+
     // Main game loop
     while (window.isOpen()) 
     {
@@ -50,13 +55,13 @@ int main()
         // Update player
         player.handleInputs();
         player.playerMovement(map);
-
         
         // Render the scene
         window.clear();        // Clear the window to prepare for a new frame
         window.draw(map);      // Draw the map (includes collision overlays if enabled)
         window.draw(player.getLegs());
         window.draw(player.getPlayer());
+        hud.draw(window);
         window.display();      // Display the rendered frame
     }
 
