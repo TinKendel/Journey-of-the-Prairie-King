@@ -135,11 +135,13 @@
     <ClCompile Include="..\..\..\Resursi\tinyXML2\tinyxml2-master\tinyxml2.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MapLoader.cpp" />
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Resursi\tinyXML2\tinyxml2-master\tinyxml2.h" />
     <ClInclude Include="Constants.hpp" />
     <ClInclude Include="MapLoader.hpp" />
+    <ClInclude Include="Player.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

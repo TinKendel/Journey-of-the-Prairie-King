@@ -115,10 +115,10 @@ void MapLoader::toggleLayerVisibility()
 
 void MapLoader::wallAnimation()
 {
-	if (wallClock.getElapsedTime().asMilliseconds() >= 1000)
+	if (wall_clock.getElapsedTime().asMilliseconds() >= 1000)
 	{
 		toggleLayerVisibility();
-		wallClock.restart();
+		wall_clock.restart();
 	}
 }
 
@@ -160,10 +160,19 @@ bool MapLoader::loadCollision(const std::string& tmxFile)
 				tinyxml2::XMLElement* property = properties->FirstChildElement("property");
 				while (property)
 				{
-					if (std::string(property->Attribute("name")) == "nextArea")
+					const char* name = property->Attribute("name");
+					const char* value = property->Attribute("value");
+
+					if (std::string(name) == "collision" && std::string(value) == "true")
 					{
-						collisionObject.nextArea = property->BoolAttribute("value");
+						collisionObject.hasCollision = true;
 					}
+
+					if (std::string(name) == "nextArea" && std::string(value) == "true")
+					{
+						collisionObject.nextArea = true;
+					}
+					
 					property = property->NextSiblingElement("property");
 				}
 			}
@@ -182,16 +191,15 @@ bool MapLoader::loadCollision(const std::string& tmxFile)
 		objectGroup = objectGroup->NextSiblingElement("objectgroup");
 	}
 
-	std::cout << "Collision data loaded successfully!" << std::endl;
 	return true; // Signal success
 }
 
 
-bool MapLoader::checkCollision(const sf::FloatRect& playerBounds) const 
+bool MapLoader::checkCollision(const sf::Sprite& playerBounds) const 
 {
 	for (const auto& obj : m_collisionObjects) 
 	{
-		if (playerBounds.intersects(obj.rect)) 
+		if (obj.hasCollision && playerBounds.getGlobalBounds().intersects(obj.rect)) 
 		{
 			return true; // Collision detected
 		}
