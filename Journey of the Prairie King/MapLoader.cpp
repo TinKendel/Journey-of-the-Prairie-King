@@ -194,7 +194,6 @@ bool MapLoader::loadCollision(const std::string& tmxFile)
 	return true; // Signal success
 }
 
-
 bool MapLoader::checkCollision(const sf::Sprite& playerBounds) const 
 {
 	for (const auto& obj : m_collisionObjects) 
@@ -205,4 +204,17 @@ bool MapLoader::checkCollision(const sf::Sprite& playerBounds) const
 		}
 	}
 	return false; // No collision
+}
+
+
+bool MapLoader::checkBulletCollision(const Bullet& bullet) const
+{
+	for (const auto& obj : m_collisionObjects)
+	{
+		if (obj.hasCollision && bullet.getBounds().intersects(obj.rect))
+		{
+			return true;
+		}
+	}
+	return false;
 }

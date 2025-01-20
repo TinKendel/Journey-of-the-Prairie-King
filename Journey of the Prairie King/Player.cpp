@@ -22,24 +22,42 @@ void Player::handleInputs()
 {
     movement = { 0, 0 };
 
+    // Lambda to simplify setting the players texture
+    auto setTextureRect = [&](int left, int top)
+    {
+        player_sprite.setTextureRect(sf::IntRect(left, top, TileConfig::TILE_WIDTH, TileConfig::TILE_HEIGHT));
+    };
+
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
     {
-        player_sprite.setTextureRect(sf::IntRect(0, 0, TileConfig::TILE_WIDTH, TileConfig::TILE_HEIGHT));
+        if (shooting == false)
+        {
+            setTextureRect(0, 0);
+        }
         movement.y -= speed;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
     {
-        player_sprite.setTextureRect(sf::IntRect(32, 0, TileConfig::TILE_WIDTH, TileConfig::TILE_HEIGHT));
+        if (shooting == false)
+        {
+            setTextureRect(32, 0);
+        }
         movement.y += speed;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
     {
-        player_sprite.setTextureRect(sf::IntRect(48, 0, TileConfig::TILE_WIDTH, TileConfig::TILE_HEIGHT));
+        if (shooting == false)
+        {
+            setTextureRect(48, 0);
+        }
         movement.x -= speed;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
     {
-        player_sprite.setTextureRect(sf::IntRect(16, 0, TileConfig::TILE_WIDTH, TileConfig::TILE_HEIGHT));
+        if (shooting == false)
+        {
+            setTextureRect(16, 0);
+        }
         movement.x += speed;
     }
 
@@ -52,10 +70,11 @@ void Player::handleInputs()
             leg_clock.restart();
         }
     }
-    else
+    
+    if (movement == sf::Vector2f(0, 0) && direction == sf::Vector2f(0, 0))
     {
-        leg_sprite.setTextureRect(sf::IntRect(16, 20, 16, 3));
-        player_sprite.setTextureRect(sf::IntRect(32, 16, 16, 16));
+        leg_sprite.setTextureRect(sf::IntRect(16, 20, 16, 3)); // Idle legs texture
+        setTextureRect(32, 16); // Idle player texture
     }
 }
 
@@ -91,8 +110,6 @@ void Player::playerMovement(MapLoader& map)
     leg_sprite.setPosition(player_sprite.getPosition().x, player_sprite.getPosition().y + 13 * GameConfig::MAP_SCALE);
 }
 
-
-
 sf::Sprite Player::getPlayer()
 {
 	return player_sprite;
@@ -107,3 +124,94 @@ sf::Vector2f Player::getMovement()
 {
     return movement;
 };
+
+void Player::loadBulletTexture(const std::string& filePath) {
+    if (!bullet_texture.loadFromFile(filePath)) {
+        std::cerr << "Failed to load bullet texture!" << std::endl;
+    }
+}
+
+void Player::shoot() {
+    if (shoot_clock.getElapsedTime().asSeconds() < shoot_cooldown) 
+    {
+        return; // Prevent shooting if cooldown is not complete
+    }
+
+    shoot_clock.restart();
+
+    // Lambda to simplify setting the players texture
+    auto setTextureRect = [&](int left, int top)
+    {
+        player_sprite.setTextureRect(sf::IntRect(left, top, TileConfig::TILE_WIDTH, TileConfig::TILE_HEIGHT));
+    };
+
+    // Determine shooting direction based on key presses
+    direction = {0.f, 0.f};
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) 
+    {
+        shooting = true;
+        setTextureRect(0, 0);
+        direction.y = -1.f; // Up
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) 
+    {
+        shooting = true;
+        setTextureRect(32, 0);
+        direction.y = 1.f; // Down
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) 
+    {
+        shooting = true;
+        setTextureRect(48, 0);
+        direction.x = -1.f; // Left
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) 
+    {
+        shooting = true;
+        setTextureRect(16, 0);
+        direction.x = 1.f; // Right
+    }
+
+    // Normalize the direction vector
+    if (direction != sf::Vector2f(0.f, 0.f)) {
+        float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
+        direction /= length; // Normalize the vector to have a magnitude of 1
+    }
+
+    // If no direction is pressed, don't shoot
+    if (direction == sf::Vector2f(0.f, 0.f)) 
+    {
+        shooting = false;
+        return;
+    }
+
+    // Create the bullet in the calculated direction
+    sf::Vector2f player_center = { player_sprite.getPosition().x + 12,  player_sprite.getPosition().y + 12 };
+    bullets.emplace_back(bullet_texture, player_center, direction);
+}
+
+void Player::updateBullets(float deltaTime, MapLoader map) 
+{
+    for (auto it = bullets.begin(); it != bullets.end();) 
+    {
+        it->update(deltaTime);
+
+        if (map.checkBulletCollision(*it)) 
+        {
+            it = bullets.erase(it); // Remove bullets that are out of bounds
+        }
+        else 
+        {
+            ++it;
+        }
+    }
+}
+
+void Player::drawBullets(sf::RenderWindow& window) 
+{
+    for (const auto& bullet : bullets) 
+    {
+        bullet.draw(window);
+    }
+}
