@@ -6,6 +6,7 @@
 #include "tinyxml2.h"            // For parsing TMX files
 #include "Constants.hpp"         
 #include "SFML/Graphics.hpp"     // For SFML rendering and transformations
+#include "Bullet.hpp"
 
 /**
  * @class MapLoader
@@ -16,7 +17,7 @@
  */
 class MapLoader : public sf::Transformable, public sf::Drawable
 {
-public:
+private:
     /**
      * @struct CollisionObject
      * @brief Represents a single collision object with associated metadata.
@@ -29,7 +30,6 @@ public:
         bool hasCollision = false;
     };
 
-private:
     sf::Texture m_tileset;                      ///< Tileset texture for the map
     std::vector<sf::VertexArray> m_layers;      ///< Vertex arrays for rendering map layers
     std::vector<bool> m_layerVisibility;        ///< Visibility toggles for layers (e.g., for animations)
@@ -40,26 +40,26 @@ private:
 
     /**
      * @brief Parses a CSV string from the TMX file to extract tile data.
-     * @param csvData The CSV string to parse.
+     * @param csvData the CSV string to parse.
      * @return A vector of integers representing tile IDs.
      */
     std::vector<int> parseCSV(const std::string& csvData);
 
     /**
      * @brief Renders the map and optional debugging elements.
-     * @param target The SFML render target.
-     * @param states Render states for transformations and blending.
+     * @param target the SFML render target.
+     * @param states render states for transformations and blending.
      */
-    virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+    void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 public:
     /**
      * @brief Loads the map, including tile layers and the tileset image.
-     * @param tmxFile Path to the TMX map file.
-     * @param tilesetImage Path to the tileset image file.
-     * @param tileSize Dimensions of each tile (in pixels).
-     * @param width Width of the map in tiles.
-     * @param height Height of the map in tiles.
+     * @param tmxFile path to the TMX map file.
+     * @param tilesetImage path to the tileset image file.
+     * @param tileSize simensions of each tile (in pixels).
+     * @param width width of the map in tiles.
+     * @param height height of the map in tiles.
      * @return True if the map loaded successfully, false otherwise.
      */
     bool load(const std::string& tmxFile, const std::string& tilesetImage, sf::Vector2u tileSize, unsigned int width, unsigned int height);
@@ -76,17 +76,24 @@ public:
 
     /**
      * @brief Loads collision data from the TMX file.
-     * @param tmxFile Path to the TMX map file.
+     * @param tmxFile path to the TMX map file.
      * @return True if collision data was loaded successfully, false otherwise.
      */
     bool loadCollision(const std::string& tmxFile);
 
     /**
      * @brief Checks if a player's bounding box collides with any collision object.
-     * @param playerBounds The bounding box of the player.
+     * @param playerBounds the bounding box of the player.
      * @return True if a collision is detected, false otherwise.
      */
     bool checkCollision(const sf::Sprite& playerBounds) const;
+
+    /**
+     * @brief Checks if a bullet bounding box collides with any collision object.
+     * @param bullet the bounding box of the bullet.
+     * @return True if a collision is detected, false otherwise.
+     */
+    bool checkBulletCollision(const Bullet& bullet) const;
 
     /**
      * @brief Provides access to all collision objects.

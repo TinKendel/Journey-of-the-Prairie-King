@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+
 #include "Constants.hpp"
 #include "MapLoader.hpp"
 #include "Player.hpp"
@@ -27,14 +28,19 @@ int main()
     // Scale the map by a factor of 2x for rendering
     map.setScale(GameConfig::MAP_SCALE, GameConfig::MAP_SCALE);
 
+    // Load player 
     Player player;
     player.loadPlayerTexture("assets\\tiledPNG\\kingSprite.png");
+    player.loadBulletTexture("assets\\tiledPNG\\bullets\\defaultBullet.png");
     player.setPlayerSprites();
 
+    // Load HUD 
     HUD hud;
     hud.loadHUDTextures();
     hud.loadFont();
 
+    sf::Clock clock;
+  
     // Main game loop
     while (window.isOpen()) 
     {
@@ -49,16 +55,23 @@ int main()
             }
         }
 
-        // Update the map (e.g., animate walls or other elements)
+        float delta_time = clock.restart().asSeconds();
+        float frame_rate = delta_time * 60.f;
+
+        // Update the map (animate walls or other elements)
         map.wallAnimation();
 
         // Update player
         player.handleInputs();
         player.playerMovement(map);
+        player.shoot();
+        player.updateBullets(frame_rate, map);
+
         
         // Render the scene
         window.clear();        // Clear the window to prepare for a new frame
         window.draw(map);      // Draw the map (includes collision overlays if enabled)
+        player.drawBullets(window);
         window.draw(player.getLegs());
         window.draw(player.getPlayer());
         hud.draw(window);
