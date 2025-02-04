@@ -134,6 +134,8 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\Resursi\tinyXML2\tinyxml2-master\tinyxml2.cpp" />
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemyManager.cpp" />
     <ClCompile Include="HUD.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MapLoader.cpp" />
@@ -143,6 +145,9 @@
     <ClInclude Include="..\..\..\Resursi\tinyXML2\tinyxml2-master\tinyxml2.h" />
     <ClInclude Include="Bullet.hpp" />
     <ClInclude Include="Constants.hpp" />
+    <ClInclude Include="Enemy.hpp" />
+    <ClInclude Include="EnemyManager.hpp" />
+    <ClInclude Include="EnemyType.hpp" />
     <ClInclude Include="HUD.hpp" />
     <ClInclude Include="MapLoader.hpp" />
     <ClInclude Include="Player.hpp" />

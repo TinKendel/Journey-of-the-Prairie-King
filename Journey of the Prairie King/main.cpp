@@ -4,6 +4,7 @@
 #include "MapLoader.hpp"
 #include "Player.hpp"
 #include "HUD.hpp"
+#include "EnemyManager.hpp"
 
 int main() 
 {
@@ -21,7 +22,7 @@ int main()
     }
 
     // Load collision data from the same map file
-    if (!map.loadCollision("assets\\tiledMap\\desert.tmx")) {
+    if (!map.loadCollision("assets\\tiledMap\\desert2.tmx")) {
         std::cerr << "Failed to load collision data!" << std::endl;
         return -1;
     }
@@ -39,8 +40,15 @@ int main()
     hud.loadHUDTextures();
     hud.loadFont();
 
-    sf::Clock clock;
-  
+    sf::Clock clock, area_clock;
+
+    int area = 1; // This is a short time fix, later it needs to be connected with the in game clock (timer)
+    EnemyManager enemy_manager;
+    enemy_manager.setSpawnPoints(map);
+    enemy_manager.loadEnemyTextures();
+    //enemy_manager.spawnEnemies(map, area);
+
+
     // Main game loop
     while (window.isOpen()) 
     {
@@ -67,10 +75,19 @@ int main()
         player.shoot();
         player.updateBullets(frame_rate, map);
 
-        
+        // Update enemies
+        enemy_manager.spawnEnemies(map, area);
+        enemy_manager.updateEnemyPosition(player.getPlayerPosition(), frame_rate);
+        //enemy_manager.checkEnemyToEnemyCollision();
+        enemy_manager.checkEnemyToPlayerCollision(player);
+        enemy_manager.checkEnemyToBulletCollision(player);
+        hud.startAreaTimer(area_clock);
+
+
         // Render the scene
         window.clear();        // Clear the window to prepare for a new frame
         window.draw(map);      // Draw the map (includes collision overlays if enabled)
+        enemy_manager.draw(window);
         player.drawBullets(window);
         window.draw(player.getLegs());
         window.draw(player.getPlayer());

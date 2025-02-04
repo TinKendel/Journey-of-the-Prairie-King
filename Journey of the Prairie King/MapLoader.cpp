@@ -35,6 +35,12 @@ void MapLoader::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	{
 		target.draw(shape, states);
 	}*/
+
+	// Draw the blue overlays for spawn areas (debugging)
+	/*for (const auto& sp : m_enemySpawnPointsShape)
+	{
+		target.draw(sp, states);
+	}*/
 }
 
 bool MapLoader::load(const std::string& tmxFile, const std::string& tilesetImage, sf::Vector2u tileSize, unsigned int width, unsigned int height)
@@ -135,58 +141,135 @@ bool MapLoader::loadCollision(const std::string& tmxFile)
 
 	while (objectGroup)
 	{
-		tinyxml2::XMLElement* object = objectGroup->FirstChildElement("object");
+		const char* groupName = objectGroup->Attribute("name");
 
-		while (object)
+		if (groupName && std::string(groupName) == "Obstacle")
 		{
-			CollisionObject collisionObject;
+			tinyxml2::XMLElement* object = objectGroup->FirstChildElement("object");
 
-			collisionObject.rect = sf::FloatRect(
-				object->FloatAttribute("x") * GameConfig::MAP_SCALE,
-				object->FloatAttribute("y") * GameConfig::MAP_SCALE,
-				object->FloatAttribute("width") * GameConfig::MAP_SCALE,
-				object->FloatAttribute("height") * GameConfig::MAP_SCALE
-			);
-
-			const char* type = object->Attribute("type");
-			if (type)
+			while (object)
 			{
-				collisionObject.type = type;
-			}
+				CollisionObject collisionObject;
 
-			tinyxml2::XMLElement* properties = object->FirstChildElement("properties");
-			if (properties)
-			{
-				tinyxml2::XMLElement* property = properties->FirstChildElement("property");
-				while (property)
+				collisionObject.rect = sf::FloatRect(
+					object->FloatAttribute("x") * GameConfig::MAP_SCALE,
+					object->FloatAttribute("y") * GameConfig::MAP_SCALE,
+					object->FloatAttribute("width") * GameConfig::MAP_SCALE,
+					object->FloatAttribute("height") * GameConfig::MAP_SCALE
+				);
+
+				const char* type = object->Attribute("type");
+				if (type)
 				{
-					const char* name = property->Attribute("name");
-					const char* value = property->Attribute("value");
-
-					if (std::string(name) == "collision" && std::string(value) == "true")
-					{
-						collisionObject.hasCollision = true;
-					}
-
-					if (std::string(name) == "nextArea" && std::string(value) == "true")
-					{
-						collisionObject.nextArea = true;
-					}
-					
-					property = property->NextSiblingElement("property");
+					collisionObject.type = type;
 				}
+
+				tinyxml2::XMLElement* properties = object->FirstChildElement("properties");
+				if (properties)
+				{
+					tinyxml2::XMLElement* property = properties->FirstChildElement("property");
+					while (property)
+					{
+						const char* name = property->Attribute("name");
+						const char* value = property->Attribute("value");
+
+						if (std::string(name) == "collision" && std::string(value) == "true")
+						{
+							collisionObject.hasCollision = true;
+						}
+
+						if (std::string(name) == "nextArea" && std::string(value) == "true")
+						{
+							collisionObject.nextArea = true;
+						}
+
+						property = property->NextSiblingElement("property");
+					}
+				}
+
+				// Create and configure the red overlay for this collision object
+				sf::RectangleShape shape;
+				shape.setPosition(collisionObject.rect.left / GameConfig::MAP_SCALE, collisionObject.rect.top / GameConfig::MAP_SCALE);
+				shape.setSize({ collisionObject.rect.width / GameConfig::MAP_SCALE, collisionObject.rect.height / GameConfig::MAP_SCALE });
+				shape.setFillColor(sf::Color(255, 0, 0, 100)); // Red with transparency
+				m_collisionShapes.push_back(shape);
+
+				m_collisionObjects.push_back(collisionObject);
+				object = object->NextSiblingElement("object");
 			}
-
-			// Create and configure the red overlay for this collision object
-			sf::RectangleShape shape;
-			shape.setPosition(collisionObject.rect.left / GameConfig::MAP_SCALE, collisionObject.rect.top / GameConfig::MAP_SCALE);
-			shape.setSize({ collisionObject.rect.width / GameConfig::MAP_SCALE, collisionObject.rect.height / GameConfig::MAP_SCALE });
-			shape.setFillColor(sf::Color(255, 0, 0, 100)); // Red with transparency
-			m_collisionShapes.push_back(shape);
-
-			m_collisionObjects.push_back(collisionObject);
-			object = object->NextSiblingElement("object");
 		}
+		else if (groupName && std::string(groupName) == "EnemySpawns")
+		{
+			tinyxml2::XMLElement* object = objectGroup->FirstChildElement("object");
+
+			while (object)
+			{
+				SpawnPoint spawn_point;
+				spawn_point.rect = sf::FloatRect(
+					object->FloatAttribute("x") * GameConfig::MAP_SCALE,
+					object->FloatAttribute("y") * GameConfig::MAP_SCALE,
+					object->FloatAttribute("width") * GameConfig::MAP_SCALE,
+					object->FloatAttribute("height") * GameConfig::MAP_SCALE
+				);
+
+				tinyxml2::XMLElement* properties = object->FirstChildElement("properties");
+				
+				if (properties)
+				{
+					tinyxml2::XMLElement* property = properties->FirstChildElement("property");
+					while (property)
+					{
+						const char* name = property->Attribute("name");
+						const char* value = property->Attribute("value");
+
+						if (std::string(name) == "area")
+						{
+							spawn_point.area = atoi(value);
+						}
+
+						if (std::string(name) == "spawnID")
+						{
+							spawn_point.spawn_id = atoi(value);
+							if (atoi(value) == 1 || atoi(value) == 2)
+							{
+								spawn_point.move_towards = sf::Vector2f(10.f, 0.f);
+							}
+							if (atoi(value) == 3 || atoi(value) == 4)
+							{
+								spawn_point.move_towards = sf::Vector2f(0.f, 10.f);
+							}
+							if (atoi(value) == 5 || atoi(value) == 6)
+							{
+								spawn_point.move_towards = sf::Vector2f(-2.f, 0.f);
+							}
+							if (atoi(value) == 7 || atoi(value) == 8)
+							{
+								spawn_point.move_towards = sf::Vector2f(0.f, -2.f);
+							}
+						}
+
+						if (std::string(name) == "stage")
+						{
+							spawn_point.stage = atoi(value);
+						}
+
+						property = property->NextSiblingElement("property");
+					}
+				}
+
+				// Create and configure the red overlay for this collision object
+				sf::RectangleShape shape;
+				shape.setPosition(spawn_point.rect.left / GameConfig::MAP_SCALE, spawn_point.rect.top / GameConfig::MAP_SCALE);
+				shape.setSize({ spawn_point.rect.width / GameConfig::MAP_SCALE, spawn_point.rect.height / GameConfig::MAP_SCALE });
+				shape.setFillColor(sf::Color(0, 0, 255, 100)); // Blue with transparency
+				m_enemySpawnPointsShape.push_back(shape);
+				
+				m_enemySpawnPoints.push_back(spawn_point);
+
+				object = object->NextSiblingElement("object");
+			}
+		}
+		
 
 		objectGroup = objectGroup->NextSiblingElement("objectgroup");
 	}
