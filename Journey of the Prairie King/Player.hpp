@@ -32,7 +32,6 @@ private:
 	int frame_duration = 150;
 
 	float speed = 1.3f;				///< Speed for player movement speed
-	sf::Vector2f new_position;		///< New_position for collision checking and "gliding" on the walls
 	sf::Vector2f movement;			///< Movement for player velocity
 
 	std::vector<Bullet> bullets;	///< bullets for keeping track of none destroyed bullets
@@ -43,7 +42,6 @@ private:
 
 	sf::Texture bullet_texture;		///< Bullet_texture for texture
 public:
-
 	/**
 	 * @brief Load the player texture.
 	 * @param filePath path to the player image file.
@@ -104,4 +102,12 @@ public:
 	* @brief Gets players movement
 	*/
 	sf::Vector2f getMovement();
+
+	sf::Vector2f getPlayerPosition() const { return player_sprite.getPosition(); }
+
+	std::vector<Bullet>& getBullets() { return bullets; }
+
+	sf::FloatRect getPlayerBounds() { return player_sprite.getGlobalBounds(); }
+
+	void playerDeath();
 };

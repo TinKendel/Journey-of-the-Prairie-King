@@ -1,4 +1,7 @@
-﻿  Player.cpp
-  main.cpp
-  Generating Code...
+﻿  EnemyManager.cpp
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\EnemyManager.cpp(52,84): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\EnemyManager.cpp(52,84): warning C4267:         with
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\EnemyManager.cpp(52,84): warning C4267:         [
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\EnemyManager.cpp(52,84): warning C4267:             _Ty=int
+E:\VS_projekti\JotPK\Journey of the Prairie King\Journey of the Prairie King\EnemyManager.cpp(52,84): warning C4267:         ]
   Journey of the Prairie King.vcxproj -> E:\VS_projekti\JotPK\Journey of the Prairie King\x64\Debug\Journey of the Prairie King.exe

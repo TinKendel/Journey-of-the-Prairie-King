@@ -28,6 +28,8 @@ private:
 	sf::Text text_health_point,			///< Health point text
 		text_coin;						///< Coin text
 
+	bool time_limit_reached = false;
+
 public:
 	/**
 	 * @brief Loads all textures that will be used for HUD and calls all setSprite functions.
@@ -79,4 +81,10 @@ public:
      * @param target the SFML render target.
 	 */
 	void draw(sf::RenderTarget& target);
+
+	void startAreaTimer(sf::Clock& area_clock);
+
+	sf::Sprite getSpriteProgressBar() { return sprite_progress_bar; }
+
+	void updateHealthPoints();
 };

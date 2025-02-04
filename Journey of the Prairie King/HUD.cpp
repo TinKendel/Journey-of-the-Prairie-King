@@ -111,3 +111,22 @@ void HUD::draw(sf::RenderTarget& target)
 	target.draw(text_health_point);
 	target.draw(text_coin);
 }
+
+
+void HUD::startAreaTimer(sf::Clock& area_clock)
+{
+	if (area_clock.getElapsedTime().asSeconds() <= 60)
+	{
+		sprite_progress_bar.setTextureRect(sf::IntRect(0, 0, 241 - (area_clock.getElapsedTime().asSeconds() * 4), 5));
+	}
+	else
+	{
+		time_limit_reached = true;
+		sprite_progress_bar.setTextureRect(sf::IntRect(0, 0, 241, 5));
+	}
+}
+
+void HUD::updateHealthPoints()
+{
+	text_health_point.setString("00");
+}

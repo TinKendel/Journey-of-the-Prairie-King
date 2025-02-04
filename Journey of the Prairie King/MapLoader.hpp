@@ -17,42 +17,15 @@
  */
 class MapLoader : public sf::Transformable, public sf::Drawable
 {
-private:
-    /**
-     * @struct CollisionObject
-     * @brief Represents a single collision object with associated metadata.
-     */
-    struct CollisionObject
-    {
-        sf::FloatRect rect;       ///< Rectangle representing the collision area
-        std::string type;         ///< Type of the object (e.g., "wall", "entrance")
-        bool nextArea = false;    ///< Custom property for entrance objects, determines area transitions
-        bool hasCollision = false;
-    };
-
-    sf::Texture m_tileset;                      ///< Tileset texture for the map
-    std::vector<sf::VertexArray> m_layers;      ///< Vertex arrays for rendering map layers
-    std::vector<bool> m_layerVisibility;        ///< Visibility toggles for layers (e.g., for animations)
-    sf::Clock wall_clock;                        ///< Timer for wall animations
-
-    std::vector<CollisionObject> m_collisionObjects;   ///< Collision objects parsed from the map
-    std::vector<sf::RectangleShape> m_collisionShapes; ///< Shapes for debugging/rendering collision areas
-
-    /**
-     * @brief Parses a CSV string from the TMX file to extract tile data.
-     * @param csvData the CSV string to parse.
-     * @return A vector of integers representing tile IDs.
-     */
-    std::vector<int> parseCSV(const std::string& csvData);
-
-    /**
-     * @brief Renders the map and optional debugging elements.
-     * @param target the SFML render target.
-     * @param states render states for transformations and blending.
-     */
-    void draw(sf::RenderTarget& target, sf::RenderStates states) const;
-
 public:
+    struct SpawnPoint
+    {
+        int stage;
+        int area;
+        int spawn_id;
+        sf::Vector2f move_towards;
+        sf::FloatRect rect;
+    };
     /**
      * @brief Loads the map, including tile layers and the tileset image.
      * @param tmxFile path to the TMX map file.
@@ -95,9 +68,51 @@ public:
      */
     bool checkBulletCollision(const Bullet& bullet) const;
 
+
     /**
      * @brief Provides access to all collision objects.
      * @return A constant reference to the collision objects vector.
      */
-    const std::vector<CollisionObject>& getCollisionObjects() const { return m_collisionObjects; }
+    //const std::vector<CollisionObject>& getCollisionObjects() const { return m_collisionObjects; }
+
+    const std::vector<SpawnPoint>& getSpawnPoints() const { return m_enemySpawnPoints; }
+
+private:
+    /**
+     * @struct CollisionObject
+     * @brief Represents a single collision object with associated metadata.
+     */
+    struct CollisionObject
+    {
+        sf::FloatRect rect;       ///< Rectangle representing the collision area
+        std::string type;         ///< Type of the object (e.g., "wall", "entrance")
+        bool nextArea = false;    ///< Custom property for entrance objects, determines area transitions
+        bool hasCollision = false;
+    };
+
+    sf::Texture m_tileset;                      ///< Tileset texture for the map
+    std::vector<sf::VertexArray> m_layers;      ///< Vertex arrays for rendering map layers
+    std::vector<bool> m_layerVisibility;        ///< Visibility toggles for layers (e.g., for animations)
+    sf::Clock wall_clock;                        ///< Timer for wall animations
+
+    std::vector<CollisionObject> m_collisionObjects;   ///< Collision objects parsed from the map
+    std::vector<sf::RectangleShape> m_collisionShapes; ///< Shapes for debugging/rendering collision areas
+
+    std::vector<SpawnPoint> m_enemySpawnPoints;
+    std::vector<sf::RectangleShape> m_enemySpawnPointsShape;
+
+    /**
+     * @brief Parses a CSV string from the TMX file to extract tile data.
+     * @param csvData the CSV string to parse.
+     * @return A vector of integers representing tile IDs.
+     */
+    std::vector<int> parseCSV(const std::string& csvData);
+
+    /**
+     * @brief Renders the map and optional debugging elements.
+     * @param target the SFML render target.
+     * @param states render states for transformations and blending.
+     */
+    void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+
 };

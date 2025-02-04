@@ -1,0 +1,47 @@
+#pragma once
+
+#include <iostream>
+#include <random>
+
+#include "SFML/Graphics.hpp"
+#include "MapLoader.hpp"
+#include "Enemy.hpp"
+#include "EnemyType.hpp"
+#include "Player.hpp"
+#include "Bullet.hpp"
+
+class EnemyManager
+{
+private:
+	std::vector<MapLoader::SpawnPoint> spawnPoints;
+
+	sf::Texture orc_texture,
+				spikeball_texture,
+				ogre_texture,
+				mushroom_texture,
+				evil_butterfly_texture,
+				mummy_texture,
+				imp_texture,
+				death_texture1,
+				death_texture2;
+
+	std::vector<Enemy> enemies;
+	sf::Clock timer;
+
+
+
+public:
+	void setSpawnPoints(const MapLoader& map);
+	
+	void loadEnemyTextures();
+	void spawnEnemies(const MapLoader& map, int area);
+	void draw(sf::RenderWindow& window);
+
+	void updateEnemyPosition(const sf::Vector2f& target, float delta_time);
+
+	void checkEnemyToEnemyCollision();
+	void resolveEnemyCollision(Enemy& enemy1, Enemy& enemy2);
+	
+	void checkEnemyToPlayerCollision(Player& player);
+	void checkEnemyToBulletCollision(Player& player);
+};

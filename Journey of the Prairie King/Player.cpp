@@ -11,7 +11,7 @@ void Player::loadPlayerTexture(const std::string& filePath)
 void Player::setPlayerSprites()
 {
 	player_sprite.setTexture(player_texture);
-	player_sprite.setPosition(240.f, 240.f);
+	player_sprite.setPosition(240, 240.f); 
 	player_sprite.setScale(GameConfig::MAP_SCALE, GameConfig::MAP_SCALE);
 
 	leg_sprite.setTexture(player_texture);
@@ -214,4 +214,9 @@ void Player::drawBullets(sf::RenderWindow& window)
     {
         bullet.draw(window);
     }
+}
+
+void Player::playerDeath()
+{
+    /*std::cout << "umro";*/
 }
