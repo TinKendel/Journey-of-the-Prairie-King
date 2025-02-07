@@ -46,8 +46,6 @@ int main()
     EnemyManager enemy_manager;
     enemy_manager.setSpawnPoints(map);
     enemy_manager.loadEnemyTextures();
-    //enemy_manager.spawnEnemies(map, area);
-
 
     // Main game loop
     while (window.isOpen()) 
@@ -77,8 +75,8 @@ int main()
 
         // Update enemies
         enemy_manager.spawnEnemies(map, area);
-        enemy_manager.updateEnemyPosition(player.getPlayerPosition(), frame_rate);
-        //enemy_manager.checkEnemyToEnemyCollision();
+        enemy_manager.updateEnemyPosition(player.getPlayerPosition(), frame_rate, map);
+        enemy_manager.checkEnemyToEnemyCollision(map);
         enemy_manager.checkEnemyToPlayerCollision(player);
         enemy_manager.checkEnemyToBulletCollision(player);
         hud.startAreaTimer(area_clock);

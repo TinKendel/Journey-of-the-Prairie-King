@@ -60,7 +60,7 @@ void EnemyManager::spawnEnemies(const MapLoader& map, int area)
         return;
     }
 
-    if (elapsed_time - last_spawn_time >= 3)
+    if (elapsed_time - last_spawn_time >= 2)
     {
         last_spawn_time = elapsed_time;
 
@@ -105,16 +105,16 @@ void EnemyManager::draw(sf::RenderWindow& window)
 	}
 }
 
-void EnemyManager::updateEnemyPosition(const sf::Vector2f& target, float delta_time)
+void EnemyManager::updateEnemyPosition(const sf::Vector2f& target, float delta_time, const MapLoader& map)
 {
 	for (auto& enemy : enemies)
 	{
-		enemy.updatePosition(target, delta_time);
+		enemy.updatePosition(target, delta_time, map);
 		enemy.updateEnemyAnimation();
 	}
 }
 
-void EnemyManager::checkEnemyToEnemyCollision()
+void EnemyManager::checkEnemyToEnemyCollision(const MapLoader& map)
 {
 	for (int i = 0; i < enemies.size(); ++i)
 	{
@@ -122,15 +122,42 @@ void EnemyManager::checkEnemyToEnemyCollision()
 		{
 			if (enemies[i].getEnemyGlobalBounds().intersects(enemies[j].getEnemyGlobalBounds()))
 			{
-				resolveEnemyCollision(enemies[i], enemies[j]);
+				resolveEnemyCollision(enemies[i], enemies[j], map);
 			}
 		}
 	}
 }
 
-void EnemyManager::resolveEnemyCollision(Enemy& enemy1, Enemy& enemy2)
+void EnemyManager::resolveEnemyCollision(Enemy& enemy1, Enemy& enemy2, const MapLoader& map)
 {
-	//enemy1.setSpeed();
+	sf::Vector2f pos1 = enemy1.getEnemyPosition();
+	sf::Vector2f pos2 = enemy2.getEnemyPosition();
+
+	sf::Vector2f diff = pos1 - pos2;
+	float distance = std::sqrt(diff.x * diff.x + diff.y * diff.y);
+
+	if (distance == 0)
+	{
+		// Avoid division by zero by giving a small nudge
+		diff = { 1.f, 0.f };
+		distance = 1.f;
+	}
+
+	// Normalize the direction vector
+	sf::Vector2f pushDirection = diff / distance;
+
+	// Push each enemy away from the other
+	float pushAmount = 1.0f; // Adjust this value based on how strong the push should be
+	sf::Sprite temp_enemy_1 = enemy1.getEnemySprite();
+	sf::Sprite temp_enemy_2 = enemy2.getEnemySprite();
+	temp_enemy_1.setPosition(pos1.x + pushDirection.x * pushAmount, pos1.y + pushDirection.y * pushAmount);
+	temp_enemy_2.setPosition(pos2.x - pushDirection.x * pushAmount, pos2.y - pushDirection.y * pushAmount);
+
+	if (!map.checkCollision(temp_enemy_1) && !map.checkCollision(temp_enemy_2))
+	{
+		enemy1.setPosition(pos1.x + pushDirection.x * pushAmount, pos1.y + pushDirection.y * pushAmount);
+		enemy2.setPosition(pos2.x - pushDirection.x * pushAmount, pos2.y - pushDirection.y * pushAmount);
+	}
 }
 
 void EnemyManager::checkEnemyToPlayerCollision(Player& player)
@@ -153,6 +180,7 @@ void EnemyManager::checkEnemyToBulletCollision(Player& player)
 			if (bullet->getBounds().intersects(enemy->getEnemyGlobalBounds()))
 			{
 				bullet = player.getBullets().erase(bullet);
+				enemy->deathAnimation(enemy->getEnemyType());
 				enemy = enemies.erase(enemy);
 				break;
 			}
