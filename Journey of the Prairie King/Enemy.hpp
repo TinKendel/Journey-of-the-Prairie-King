@@ -1,8 +1,10 @@
 #pragma once
 
+#include <iostream>
 #include "Constants.hpp"
 #include "EnemyType.hpp"
 #include "SFML/Graphics.hpp"
+#include "MapLoader.hpp"
 
 class Enemy
 {
@@ -10,9 +12,10 @@ private:
 	sf::Sprite enemy_sprite;
 	sf::Sprite death_sprite1;
 	sf::Sprite deat_sprite2;
+
 	int hp;
 	float speed;
-	sf::Vector2f position;
+
 	EnemyType type;
 	bool can_fly;
 	bool has_left_spawn;
@@ -50,11 +53,9 @@ public:
 
 	void setPosition(float x, float y) { enemy_sprite.setPosition(x, y); }
 
-	void updatePosition(const sf::Vector2f& target, float delta_time);
+	void updatePosition(const sf::Vector2f& target, float delta_time, const MapLoader& map);
 
 	void updateEnemyAnimation();
-
-	sf::FloatRect getEnemyGlobalBounds() { return enemy_sprite.getGlobalBounds(); }
 
 	void setSpeed(float x) { speed = x; }
 
@@ -64,6 +65,15 @@ public:
 
 	void setMoveDirection(const sf::Vector2f& direction) { move_direction = direction; }
 
-	//void deathAnimation(EnemyType type);
+	void deathAnimation(EnemyType type);
 
+	sf::FloatRect getEnemyGlobalBounds() { return enemy_sprite.getGlobalBounds(); }
+
+	sf::Vector2f getEnemyPosition() { return enemy_sprite.getPosition(); }
+
+	void checkCollision(const MapLoader& map);
+
+	EnemyType getEnemyType() { return type; }
+
+	sf::Sprite getEnemySprite() { return enemy_sprite; }
 };

@@ -11,6 +11,7 @@ Enemy::Enemy(EnemyType type, const sf::Texture& texture, const sf::Texture& deat
 			death_sprite1.setTexture(death_texture);
 			enemy_sprite.setScale(GameConfig::MAP_SCALE, GameConfig::MAP_SCALE);
 			enemy_sprite.setTextureRect(sf::IntRect(0, 0, 16, 16));
+			has_left_spawn = false;
 			hp = 1;
 			speed = 1;
 			can_fly = false;
@@ -48,7 +49,7 @@ void Enemy::draw(sf::RenderWindow& window)
 	window.draw(enemy_sprite);
 }
 
-void Enemy::updatePosition(const sf::Vector2f& target, float delta_time)
+void Enemy::updatePosition(const sf::Vector2f& target, float delta_time, const MapLoader& map)
 {
 	if (!has_left_spawn)
 	{
@@ -77,7 +78,15 @@ void Enemy::updatePosition(const sf::Vector2f& target, float delta_time)
 		direction /= magnitude;
 	}
 
-	enemy_sprite.move(direction * speed * delta_time);
+	sf::Sprite temp_sprite = enemy_sprite;
+	sf::Vector2f new_position = enemy_sprite.getPosition() + (direction * speed * delta_time);
+	temp_sprite.setPosition(new_position);
+
+	if (!map.checkCollision(temp_sprite))
+	{
+		enemy_sprite.setPosition(new_position);
+	}
+	
 }
 
 void Enemy::updateEnemyAnimation()
@@ -98,37 +107,54 @@ void Enemy::updateEnemyAnimation()
 }
 
 
-//void Enemy::deathAnimation(EnemyType type)
-//{
-//	switch (type)
-//	{
-//		case EnemyType::Orc:
-//		{
-//			break;
-//		}
-//		case EnemyType::Spikeball:
-//		{
-//			break;
-//		}
-//		case EnemyType::Ogre:
-//		{
-//			break;
-//		}
-//		case EnemyType::Mushroom:
-//		{
-//			break;
-//		}
-//		case EnemyType::Evil_butterfly:
-//		{
-//			break;
-//		}
-//		case EnemyType::Mummy:
-//		{
-//			break;
-//		}
-//		case EnemyType::Imp:
-//		{
-//			break;
-//		}
-//	}
-//}
+void Enemy::deathAnimation(EnemyType type)
+{
+	switch (type)
+	{
+		case EnemyType::Orc:
+		{
+			if (death_animation_timer1.getElapsedTime().asSeconds() < 3)
+			{
+				return;
+			}
+
+			break;
+		}
+		case EnemyType::Spikeball:
+		{
+			break;
+		}
+		case EnemyType::Ogre:
+		{
+			break;
+		}
+		case EnemyType::Mushroom:
+		{
+			break;
+		}
+		case EnemyType::Evil_butterfly:
+		{
+			break;
+		}
+		case EnemyType::Mummy:
+		{
+			break;
+		}
+		case EnemyType::Imp:
+		{
+			break;
+		}
+	}
+}
+
+void Enemy::checkCollision(const MapLoader& map)
+{
+	if (can_fly == false)
+	{
+		if (map.checkCollision(enemy_sprite))
+		{
+			std::cout << "After hitting a wall" << move_direction.x << " - " << move_direction.y << "\n";
+			enemy_sprite.setPosition(enemy_sprite.getPosition() - move_direction);
+		}
+	}	
+}

@@ -37,10 +37,10 @@ public:
 	void spawnEnemies(const MapLoader& map, int area);
 	void draw(sf::RenderWindow& window);
 
-	void updateEnemyPosition(const sf::Vector2f& target, float delta_time);
+	void updateEnemyPosition(const sf::Vector2f& target, float delta_time, const MapLoader& map);
 
-	void checkEnemyToEnemyCollision();
-	void resolveEnemyCollision(Enemy& enemy1, Enemy& enemy2);
+	void checkEnemyToEnemyCollision(const MapLoader& map);
+	void resolveEnemyCollision(Enemy& enemy1, Enemy& enemy2, const MapLoader& map);
 	
 	void checkEnemyToPlayerCollision(Player& player);
 	void checkEnemyToBulletCollision(Player& player);

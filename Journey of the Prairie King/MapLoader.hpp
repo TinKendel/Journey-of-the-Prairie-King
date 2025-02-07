@@ -55,11 +55,11 @@ public:
     bool loadCollision(const std::string& tmxFile);
 
     /**
-     * @brief Checks if a player's bounding box collides with any collision object.
-     * @param playerBounds the bounding box of the player.
+     * @brief Checks if a sprites bounding box collides with any collision object.
+     * @param sprite the bounding box of the player/enemy.
      * @return True if a collision is detected, false otherwise.
      */
-    bool checkCollision(const sf::Sprite& playerBounds) const;
+    bool checkCollision(const sf::Sprite& sprite) const;
 
     /**
      * @brief Checks if a bullet bounding box collides with any collision object.

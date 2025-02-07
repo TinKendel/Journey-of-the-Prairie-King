@@ -277,11 +277,11 @@ bool MapLoader::loadCollision(const std::string& tmxFile)
 	return true; // Signal success
 }
 
-bool MapLoader::checkCollision(const sf::Sprite& playerBounds) const 
+bool MapLoader::checkCollision(const sf::Sprite& sprite) const 
 {
 	for (const auto& obj : m_collisionObjects) 
 	{
-		if (obj.hasCollision && playerBounds.getGlobalBounds().intersects(obj.rect)) 
+		if (obj.hasCollision && sprite.getGlobalBounds().intersects(obj.rect)) 
 		{
 			return true; // Collision detected
 		}
