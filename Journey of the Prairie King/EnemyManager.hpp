@@ -26,15 +26,18 @@ private:
 				death_texture2;
 
 	std::vector<Enemy> enemies;
-	sf::Clock timer;
 
+
+	sf::Clock timer;
+	float elapsed_time;
+	float last_spawn_time;
 
 
 public:
 	void setSpawnPoints(const MapLoader& map);
 	
 	void loadEnemyTextures();
-	void spawnEnemies(const MapLoader& map, int area);
+	void spawnEnemies(const MapLoader& map, int& area);
 	void draw(sf::RenderWindow& window);
 
 	void updateEnemyPosition(const sf::Vector2f& target, float delta_time, const MapLoader& map);
@@ -44,4 +47,8 @@ public:
 	
 	void checkEnemyToPlayerCollision(Player& player);
 	void checkEnemyToBulletCollision(Player& player);
+
+	int getNumberOfEnemies() { return enemies.size(); }
+
+	void restartEnemyManagerTimer() { timer.restart(); elapsed_time = 0; last_spawn_time = 0.f; }
 };

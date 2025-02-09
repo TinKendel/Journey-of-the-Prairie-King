@@ -43,8 +43,13 @@ void EnemyManager::loadEnemyTextures()
 	}
 }
 
-void EnemyManager::spawnEnemies(const MapLoader& map, int area)
+void EnemyManager::spawnEnemies(const MapLoader& map, int& area)
 {
+	if (timer.getElapsedTime().asSeconds() >= 60)
+	{
+		return;
+	}
+
     static std::random_device rd;
     static std::mt19937 rng(rd());
 
@@ -52,12 +57,12 @@ void EnemyManager::spawnEnemies(const MapLoader& map, int area)
     static std::uniform_int_distribution<int> spawnIndexDist(0, spawnPoints.size() - 1); // Random index for spawn points
     static std::uniform_int_distribution<int> spawnPointCount(1, 8); // Random number to determine number of spawn points that will be used
 
-    static float last_spawn_time = 0.0f;
-    float elapsed_time = timer.getElapsedTime().asSeconds();
+    elapsed_time = timer.getElapsedTime().asSeconds();
 
     if (elapsed_time < 3) // No enemy should spawn until then
     {
         return;
+		
     }
 
     if (elapsed_time - last_spawn_time >= 2)

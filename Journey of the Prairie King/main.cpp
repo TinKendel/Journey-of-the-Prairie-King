@@ -12,6 +12,10 @@ int main()
     sf::RenderWindow window(sf::VideoMode(GameConfig::WINDOW_WIDTH, GameConfig::WINDOW_HEIGHT), "THE GAME");
     window.setFramerateLimit(60); // Limit the framerate to 60 FPS for smoother gameplay
 
+    sf::View view = window.getView();
+    window.setView(view);
+
+
     // Create a MapLoader instance to manage map rendering and collisions
     MapLoader map;
     if (!map.load("assets\\tiledMap\\desert.tmx", "assets\\tiledPNG\\background.png", sf::Vector2u(TileConfig::TILE_WIDTH, TileConfig::TILE_HEIGHT), 20, 81)) 
@@ -26,6 +30,7 @@ int main()
         std::cerr << "Failed to load collision data!" << std::endl;
         return -1;
     }
+
     // Scale the map by a factor of 2x for rendering
     map.setScale(GameConfig::MAP_SCALE, GameConfig::MAP_SCALE);
 
@@ -40,7 +45,7 @@ int main()
     hud.loadHUDTextures();
     hud.loadFont();
 
-    sf::Clock clock, area_clock;
+    sf::Clock clock;
 
     int area = 1; // This is a short time fix, later it needs to be connected with the in game clock (timer)
     EnemyManager enemy_manager;
@@ -79,7 +84,8 @@ int main()
         enemy_manager.checkEnemyToEnemyCollision(map);
         enemy_manager.checkEnemyToPlayerCollision(player);
         enemy_manager.checkEnemyToBulletCollision(player);
-        hud.startAreaTimer(area_clock);
+        hud.startAreaTimer(enemy_manager, player, view, area);
+        window.setView(view);
 
 
         // Render the scene
@@ -89,6 +95,8 @@ int main()
         player.drawBullets(window);
         window.draw(player.getLegs());
         window.draw(player.getPlayer());
+
+        window.setView(window.getDefaultView());
         hud.draw(window);
         window.display();      // Display the rendered frame
     }
