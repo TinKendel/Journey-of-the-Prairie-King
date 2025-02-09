@@ -20,6 +20,8 @@ private:
 	sf::Sprite player_sprite;		///< Player sprite 
 	sf::Sprite leg_sprite;			///< Leg Sprite 
 
+	sf::Vector2f spawn_position = { GameConfig::WINDOW_WIDTH / 2, GameConfig::WINDOW_HEIGHT / 2 };
+
 	const std::vector<sf::IntRect> leg_frames = { // Each element inside the vector holds a different peace of the PNG
 		sf::IntRect(16, 16, 16, 3), // Frame 1
 		sf::IntRect(16, 20, 16, 3), // Frame 2
@@ -41,6 +43,8 @@ private:
 	bool shooting;
 
 	sf::Texture bullet_texture;		///< Bullet_texture for texture
+
+	int area = 1;
 public:
 	/**
 	 * @brief Load the player texture.
@@ -110,4 +114,6 @@ public:
 	sf::FloatRect getPlayerBounds() { return player_sprite.getGlobalBounds(); }
 
 	void playerDeath();
+
+	void movePlayerToNextArea() { player_sprite.setPosition(spawn_position.x, spawn_position.y + GameConfig::WINDOW_HEIGHT * area++); }
 };

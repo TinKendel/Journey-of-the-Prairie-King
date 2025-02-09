@@ -60,10 +60,11 @@ void HUD::setSpriteCoin()
 	sprite_coin.setPosition(0.f, 108.f);
 	sprite_coin.setScale(GameConfig::MAP_SCALE, GameConfig::MAP_SCALE);
 }
+
 void HUD::setSpriteClock()
 {
 	sprite_clock.setTexture(texture_clock);
-	sprite_clock.setPosition(58.f, 0.f);
+	sprite_clock.setPosition(64.f, 0.f);
 	sprite_clock.setScale(GameConfig::MAP_SCALE, GameConfig::MAP_SCALE);
 }
 
@@ -113,7 +114,7 @@ void HUD::draw(sf::RenderTarget& target)
 }
 
 
-void HUD::startAreaTimer(sf::Clock& area_clock)
+void HUD::startAreaTimer(EnemyManager& em, Player& player, sf::View& view, int& area)
 {
 	if (area_clock.getElapsedTime().asSeconds() <= 60)
 	{
@@ -121,8 +122,17 @@ void HUD::startAreaTimer(sf::Clock& area_clock)
 	}
 	else
 	{
-		time_limit_reached = true;
+		//time_limit_reached = true;
 		sprite_progress_bar.setTextureRect(sf::IntRect(0, 0, 241, 5));
+
+		if (em.getNumberOfEnemies() == 0 && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter))
+		{
+			player.movePlayerToNextArea();
+			view.move(0.f, GameConfig::WINDOW_HEIGHT - 32);
+			area++;
+			restartAreaTimer();
+			em.restartEnemyManagerTimer();
+		}
 	}
 }
 

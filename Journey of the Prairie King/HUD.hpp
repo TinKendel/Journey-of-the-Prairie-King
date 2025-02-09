@@ -3,6 +3,8 @@
 #include <iostream>
 #include "Constants.hpp"
 #include "SFML/Graphics.hpp"
+#include "EnemyManager.hpp"
+#include "Player.hpp"
 
 /**
  * @class HUD
@@ -29,6 +31,8 @@ private:
 		text_coin;						///< Coin text
 
 	bool time_limit_reached = false;
+
+	sf::Clock area_clock;
 
 public:
 	/**
@@ -82,9 +86,11 @@ public:
 	 */
 	void draw(sf::RenderTarget& target);
 
-	void startAreaTimer(sf::Clock& area_clock);
+	void startAreaTimer(EnemyManager& em, Player& player, sf::View& view, int& area);
+	void restartAreaTimer() { area_clock.restart(); }
 
 	sf::Sprite getSpriteProgressBar() { return sprite_progress_bar; }
 
 	void updateHealthPoints();
+
 };

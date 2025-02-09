@@ -11,7 +11,7 @@ void Player::loadPlayerTexture(const std::string& filePath)
 void Player::setPlayerSprites()
 {
 	player_sprite.setTexture(player_texture);
-	player_sprite.setPosition(240, 240.f); 
+	player_sprite.setPosition(spawn_position);
 	player_sprite.setScale(GameConfig::MAP_SCALE, GameConfig::MAP_SCALE);
 
 	leg_sprite.setTexture(player_texture);
