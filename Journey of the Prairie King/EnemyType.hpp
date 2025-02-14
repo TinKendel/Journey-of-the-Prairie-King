@@ -10,3 +10,10 @@ enum class EnemyType
     Mummy,
     Imp
 };
+
+enum class EnemyState
+{
+    Alive,
+    Dying,
+    Dead
+};

@@ -115,5 +115,5 @@ public:
 
 	void playerDeath();
 
-	void movePlayerToNextArea() { player_sprite.setPosition(spawn_position.x, spawn_position.y + GameConfig::WINDOW_HEIGHT * area++); }
+	void movePlayerToNextArea() { player_sprite.setPosition(spawn_position.x, spawn_position.y + (GameConfig::WINDOW_HEIGHT * area++) - (32 * area)); }
 };

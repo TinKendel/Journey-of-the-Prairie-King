@@ -25,6 +25,8 @@ private:
 				death_texture1,
 				death_texture2;
 
+	static std::map<int, std::map<int, std::vector<EnemyType>>> enemy_spawn_table;
+
 	std::vector<Enemy> enemies;
 
 
@@ -37,10 +39,12 @@ public:
 	void setSpawnPoints(const MapLoader& map);
 	
 	void loadEnemyTextures();
-	void spawnEnemies(const MapLoader& map, int& area);
+	void spawnEnemies(const MapLoader& map, int stage, int area);
 	void draw(sf::RenderWindow& window);
 
 	void updateEnemyPosition(const sf::Vector2f& target, float delta_time, const MapLoader& map);
+
+	void resolveDyingEnemies();
 
 	void checkEnemyToEnemyCollision(const MapLoader& map);
 	void resolveEnemyCollision(Enemy& enemy1, Enemy& enemy2, const MapLoader& map);
@@ -51,4 +55,6 @@ public:
 	int getNumberOfEnemies() { return enemies.size(); }
 
 	void restartEnemyManagerTimer() { timer.restart(); elapsed_time = 0; last_spawn_time = 0.f; }
+
+	sf::Texture& getEnemyTexture(EnemyType type);
 };

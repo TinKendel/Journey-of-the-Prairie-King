@@ -1,16 +1,20 @@
 #include "Enemy.hpp"
 
 Enemy::Enemy(EnemyType type, const sf::Texture& texture, const sf::Texture& death_texture)
-	: type(type), has_left_spawn(false)
+	: type(type), has_left_spawn(false), state(EnemyState::Alive), death_texture1(death_texture)
 {
 	switch (type)
 	{
 		case EnemyType::Orc:
 		{
 			enemy_sprite.setTexture(texture);
-			death_sprite1.setTexture(death_texture);
 			enemy_sprite.setScale(GameConfig::MAP_SCALE, GameConfig::MAP_SCALE);
-			enemy_sprite.setTextureRect(sf::IntRect(0, 0, 16, 16));
+			enemy_sprite.setTextureRect(sf::IntRect(0, 0, TileConfig::TILE_WIDTH, TileConfig::TILE_HEIGHT));
+
+			death_sprite1.setTexture(death_texture);
+			death_sprite1.setScale(GameConfig::MAP_SCALE, GameConfig::MAP_SCALE);
+			death_sprite1.setTextureRect(sf::IntRect(0, 0, TileConfig::TILE_WIDTH, TileConfig::TILE_HEIGHT));
+
 			has_left_spawn = false;
 			hp = 1;
 			speed = 1;
@@ -19,10 +23,24 @@ Enemy::Enemy(EnemyType type, const sf::Texture& texture, const sf::Texture& deat
 		}
 		case EnemyType::Spikeball:
 		{
+			enemy_sprite.setTexture(texture);
+			enemy_sprite.setScale(GameConfig::MAP_SCALE, GameConfig::MAP_SCALE);
+			enemy_sprite.setTextureRect(sf::IntRect(0, 0, TileConfig::TILE_WIDTH, TileConfig::TILE_HEIGHT));
+			has_left_spawn = false;
+			hp = 1;
+			speed = 1;
+			can_fly = false;
 			break;
 		}
 		case EnemyType::Ogre:
 		{
+			enemy_sprite.setTexture(texture);
+			enemy_sprite.setScale(GameConfig::MAP_SCALE, GameConfig::MAP_SCALE);
+			enemy_sprite.setTextureRect(sf::IntRect(0, 0, TileConfig::TILE_WIDTH, TileConfig::TILE_HEIGHT));
+			has_left_spawn = false;
+			hp = 1;
+			speed = 0.8;
+			can_fly = false;
 			break;
 		}
 		case EnemyType::Mushroom:
@@ -47,6 +65,11 @@ Enemy::Enemy(EnemyType type, const sf::Texture& texture, const sf::Texture& deat
 void Enemy::draw(sf::RenderWindow& window)
 {
 	window.draw(enemy_sprite);
+
+	if (state == EnemyState::Dying)
+	{
+		window.draw(death_sprite1);
+	}
 }
 
 void Enemy::updatePosition(const sf::Vector2f& target, float delta_time, const MapLoader& map)
@@ -91,6 +114,11 @@ void Enemy::updatePosition(const sf::Vector2f& target, float delta_time, const M
 
 void Enemy::updateEnemyAnimation()
 {
+	if (state == EnemyState::Dying)
+	{
+		return;
+	}
+
 	if (animation_timer.getElapsedTime().asSeconds() > 0.25 && animation_timer.getElapsedTime().asSeconds() < 0.5)
 	{
 		enemy_sprite.setTextureRect(sf::IntRect(16, 0, 16, 16));
@@ -106,46 +134,42 @@ void Enemy::updateEnemyAnimation()
 
 }
 
+void Enemy::isDying()
+{
+	state = EnemyState::Dying;
+	enemy_sprite.setTextureRect(sf::IntRect(0, 0, 1, 1));
+	death_sprite1.setPosition(enemy_sprite.getPosition());
+	current_frame = 0;
+	death_animation_timer1.restart();
+}
 
-void Enemy::deathAnimation(EnemyType type)
+
+bool Enemy::deathAnimation()
 {
 	switch (type)
 	{
 		case EnemyType::Orc:
 		{
-			if (death_animation_timer1.getElapsedTime().asSeconds() < 3)
+			if (death_animation_timer1.getElapsedTime().asMilliseconds() > frame_duration)
 			{
-				return;
+				if (current_frame < death_frames1.size())
+				{	
+					
+					death_sprite1.setTextureRect(death_frames1[current_frame]);
+					death_animation_timer1.restart();
+					current_frame++;
+				}
+				else
+				{
+					state = EnemyState::Dead; // Mark it as fully dead
+					return true; // Signal to remove the enemy
+				}
 			}
-
-			break;
-		}
-		case EnemyType::Spikeball:
-		{
-			break;
-		}
-		case EnemyType::Ogre:
-		{
-			break;
-		}
-		case EnemyType::Mushroom:
-		{
-			break;
-		}
-		case EnemyType::Evil_butterfly:
-		{
-			break;
-		}
-		case EnemyType::Mummy:
-		{
-			break;
-		}
-		case EnemyType::Imp:
-		{
-			break;
 		}
 	}
+	return false; // Animation is still ongoing
 }
+
 
 void Enemy::checkCollision(const MapLoader& map)
 {
@@ -153,7 +177,6 @@ void Enemy::checkCollision(const MapLoader& map)
 	{
 		if (map.checkCollision(enemy_sprite))
 		{
-			std::cout << "After hitting a wall" << move_direction.x << " - " << move_direction.y << "\n";
 			enemy_sprite.setPosition(enemy_sprite.getPosition() - move_direction);
 		}
 	}	

@@ -10,8 +10,8 @@ class Enemy
 {
 private:
 	sf::Sprite enemy_sprite;
+	sf::Texture death_texture1;
 	sf::Sprite death_sprite1;
-	sf::Sprite deat_sprite2;
 
 	int hp;
 	float speed;
@@ -23,20 +23,20 @@ private:
 	sf::Vector2f spawn_point;
 	sf::Vector2f move_direction;
 
-	int current_frame = 0;
-	int frame_duration = 150;
+	int current_frame;
+	int frame_duration = 70;
 
 	sf::Clock animation_timer,
 			  death_animation_timer1;
 
-	//const std::vector<sf::IntRect> death_frames1 = { 
-	//	sf::IntRect(0, 0, 16, 16), 
-	//	sf::IntRect(16, 0, 16, 16), 
-	//	sf::IntRect(32, 0, 16, 16),
-	//	sf::IntRect(48, 0, 16, 16),  
-	//	sf::IntRect(62, 0, 16, 16), 
-	//	sf::IntRect(78, 0, 16, 16)  
-	//};
+	std::vector<sf::IntRect> death_frames1 = { 
+		sf::IntRect(0, 0, 16, 16), 
+		sf::IntRect(16, 0, 16, 16), 
+		sf::IntRect(32, 0, 16, 16),
+		sf::IntRect(48, 0, 16, 16),  
+		sf::IntRect(64, 0, 16, 16), 
+		sf::IntRect(80, 0, 16, 16)  
+	};
 
 	//const std::vector<sf::IntRect> death_frames2 = {
 	//	sf::IntRect(0, 0, 16, 16), 
@@ -45,6 +45,8 @@ private:
 	//	sf::IntRect(48, 0, 16, 16),  
 	//	sf::IntRect(62, 0, 16, 16)  
 	//};
+
+	EnemyState state = EnemyState::Alive;
 
 public:
 	Enemy(EnemyType type, const sf::Texture& texture, const sf::Texture& death_texture);
@@ -59,13 +61,16 @@ public:
 
 	void setSpeed(float x) { speed = x; }
 
-	void enemyKilled() { speed = 0; }
-
 	void setSpawnPoint(const sf::Vector2f& point) { spawn_point = point; }
 
 	void setMoveDirection(const sf::Vector2f& direction) { move_direction = direction; }
 
-	void deathAnimation(EnemyType type);
+
+	void isDying();
+	bool deathAnimation();
+	EnemyState getEnemySate() { return state; }
+
+
 
 	sf::FloatRect getEnemyGlobalBounds() { return enemy_sprite.getGlobalBounds(); }
 
