@@ -47,7 +47,8 @@ int main()
 
     sf::Clock clock;
 
-    int area = 1; // This is a short time fix, later it needs to be connected with the in game clock (timer)
+    int area = 1;
+    int stage = 1;
     EnemyManager enemy_manager;
     enemy_manager.setSpawnPoints(map);
     enemy_manager.loadEnemyTextures();
@@ -79,11 +80,12 @@ int main()
         player.updateBullets(frame_rate, map);
 
         // Update enemies
-        enemy_manager.spawnEnemies(map, area);
+        enemy_manager.spawnEnemies(map, stage, area);
         enemy_manager.updateEnemyPosition(player.getPlayerPosition(), frame_rate, map);
         enemy_manager.checkEnemyToEnemyCollision(map);
         enemy_manager.checkEnemyToPlayerCollision(player);
         enemy_manager.checkEnemyToBulletCollision(player);
+        enemy_manager.resolveDyingEnemies();
         hud.startAreaTimer(enemy_manager, player, view, area);
         window.setView(view);
 
